@@ -15,7 +15,14 @@ const blogSchema = new Schema(
       type: String,
       required: true,
     },
-    comments: [{ type: ObjectId, ref: "User" }, { type: String }],
+    comments: [
+      {
+        personId: ObjectId,
+        personName: "String",
+        comment: "String",
+        createdAt: new Date(),
+      },
+    ],
     tags: {
       type: Array,
     },
