@@ -1,0 +1,29 @@
+{
+  "name": "backend-photographer-blog",
+  "version": "1.0.0",
+  "description": "Backend for my blog app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "restart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChikoDish/photographer-blog.git"
+  },
+  "author": "Ankit Kumar Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChikoDish/photographer-blog/issues"
+  },
+  "homepage": "https://github.com/ChikoDish/photographer-blog#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "mongoose": "^5.11.15"
+  }
+}
