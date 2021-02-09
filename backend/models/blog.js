@@ -17,9 +17,15 @@ const blogSchema = new Schema(
     },
     comments: [
       {
-        personId: ObjectId,
+        personId: Schema.Types.ObjectId,
         personName: "String",
         comment: "String",
+        createdAt: new Date(),
+      },
+    ],
+    likes: [
+      {
+        personId: Schema.Types.ObjectId,
         createdAt: new Date(),
       },
     ],
