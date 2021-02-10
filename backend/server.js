@@ -5,7 +5,7 @@ import config from "./config/config.js";
 import mongoose from "mongoose";
 
 const app = express();
-
+app.use(helmet());
 app.use(bodyParser.json());
 
 mongoose
