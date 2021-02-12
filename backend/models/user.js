@@ -6,15 +6,16 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
+      trim: true,
+      unique: true,
     },
     firstName: {
       type: String,
+      trim: true,
     },
     lastName: {
       type: String,
-    },
-    age: {
-      type: Number,
+      trim: true,
     },
     userType: {
       type: String,
@@ -26,6 +27,10 @@ const userSchema = new Schema(
     },
     dob: {
       type: Date,
+    },
+    resetPasswordLink: {
+      type: String,
+      default: "",
     },
   },
   {
