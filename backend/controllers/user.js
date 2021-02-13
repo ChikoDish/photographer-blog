@@ -5,6 +5,7 @@ import {
   resetPasswordValidator,
   signupValidator,
   forgetPasswordValidaor,
+  changePasswordValidator,
 } from "../validator/index.js";
 import { check, validationResult } from "express-validator";
 import User from "../models/user.js";
@@ -36,7 +37,6 @@ router.post("/api/register", signupValidator, async (req, res) => {
 });
 
 //user login
-
 router.post("/api/login", async (req, res) => {
   const { email, password, userType } = req.body;
   try {
@@ -54,6 +54,45 @@ router.post("/api/login", async (req, res) => {
     }
   } catch (error) {
     res.status(500).json({ success: false, message: error });
+  }
+});
+
+//change Password
+router.post(
+  "/api/changepassword",
+  changePasswordValidator,
+  async (req, res) => {
+    const { email, lastPass, password } = req.body;
+    try {
+      const update = { $set: { password: password } };
+      const user = await User.findOneAndUpdate({ email: email }, update, {
+        new: true,
+      }).exec();
+      if (user) {
+        res.status(200).json({ message: user });
+      } else {
+        res.status(400).json({ message: "user not found" });
+      }
+    } catch (error) {
+      res.status(400).json({ message: error });
+    }
+  }
+);
+
+//reset password
+router.post("/api/resetpassword", resetPasswordValidator, async (req, res) => {
+  const { id, password } = req.body;
+  try {
+    const user = await User.findByIdAndUpdate(id, {
+      password: password,
+    }).exec();
+    if (user) {
+      res.status(200).json({ message: "Updated successfully" });
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    res.status(400).json({ message: error });
   }
 });
 export default router;

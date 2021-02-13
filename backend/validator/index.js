@@ -34,6 +34,15 @@ export const resetPasswordValidator = [
     .withMessage("Password must be at least 6 characters long"),
 ];
 
+export const changePasswordValidator = [
+  check("password")
+    .not()
+    .isEmpty()
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters long"),
+  check("email", "email is required").isEmpty(),
+];
+
 // export default {
 //   resetPasswordValidator,
 //   signupValidation,
