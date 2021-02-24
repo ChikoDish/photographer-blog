@@ -23,3 +23,20 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.add {
+  height: 500px;
+  width: 800px;
+  text-align: center;
+  float: center;
+  margin: 0 auto;
+}
+.tox {
+  margin-top: 20px;
+}
+.button {
+  width: 100px;
+  height: 40px;
+  background: black;
+  color: white;
+  margin-top: 20px;
+}

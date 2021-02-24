@@ -11,6 +11,7 @@ const AddBlog = () => {
 
   return (
     <div className="add">
+      <h1>Add Blog</h1>
       <form onSubmit={saveBlog}>
         <input
           type="text"
@@ -18,10 +19,11 @@ const AddBlog = () => {
           placeholder="Title"
         ></input>
         <Editor
+          className="blog-editor"
           apiKey="lz670kty0rwllutn8ee24oc7t064sqxl948wrg7m1lb132c4"
           initialValue=""
           init={{
-            height: 500,
+            height: 300,
             menubar: false,
             plugins: [
               "advlist autolink lists link image charmap print preview anchor",
@@ -33,6 +35,7 @@ const AddBlog = () => {
           }}
           onEditorChange={handleEditorChange}
         />
+        <button className="button">Add</button>
       </form>
     </div>
   );
