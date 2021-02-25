@@ -20,13 +20,13 @@ const blogSchema = new Schema(
         personId: Schema.Types.ObjectId,
         personName: "String",
         comment: "String",
-        createdAt: new Date(),
+        // createdAt: new Date(),
       },
     ],
     likes: [
       {
         personId: Schema.Types.ObjectId,
-        createdAt: new Date(),
+        //  createdAt: new Date(),
       },
     ],
     tags: {

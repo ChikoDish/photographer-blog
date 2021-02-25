@@ -1,5 +1,5 @@
-import backpath from "./backpath";
+import { backpath } from "./backpath";
 
-export const add = `${backpath}addblog`;
+export const add = `${backpath}blog/api/addblog`;
 
-export const getBlogs = `${backpath}getblogs`;
+export const getBlogs = `${backpath}blog/api/getblogs`;
