@@ -7,9 +7,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const login = (e) => {
-    axios.post(loginUri, { email, password }).then((response) => {
-      console.log(response);
-    });
+    e.preventDefault();
+    axios
+      .post(loginUri, { email, password, userType: "Member" })
+      .then((response) => {
+        console.log(response);
+      });
   };
   return (
     <div className="login">

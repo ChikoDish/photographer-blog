@@ -7,13 +7,14 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const register = (e) => {
+    e.preventDefault();
     axios.post(registerUri, { email, password }).then((response) => {
       console.log(response);
     });
   };
   return (
     <div className="register">
-      <h1>Login</h1>
+      <h1>Register</h1>
       <form onSubmit={register}>
         <label>Email</label>
         <input type="email" onChange={(e) => setEmail(e.target.value)} />
